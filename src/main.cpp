@@ -164,7 +164,6 @@ void loop(){
 
       if(jpg.open((char*)selectedPath,myOpen,myClose,myRead,mySeek,(JPEG_DRAW_CALLBACK*)JPEGDraw)){
         jpg.setPixelType(RGB565_BIG_ENDIAN);
-
         jpg.decode(0,0,0);
         jpg.close();
         screen = 1;
@@ -277,7 +276,7 @@ void loadVisible(){
       const char* name = entry.name();
       const int len = strlen(name);
 
-      if(len >= 4 && (strcasecmp(name+len-4,".jpg") == 0) || strcasecmp(name+len-4,".jpeg")){
+      if(len >= 4 && (strcasecmp(name+len-4,".jpg") == 0) || strcasecmp(name+len-5,".jpeg")){
         if(jpgMatchCount >= nav.topIndex) // Increment increase from nav.TopIndex adhering to top Index.
           {
 
